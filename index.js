@@ -46,7 +46,7 @@ app.put("/updateCard/:id", async (req, res) => {
 app.delete("/deleteCard/:id", async (req, res) => {
   try {
     const { id } = req.params; //  se lee el ID de la URL
-    const deletedCard = await Card.findByIdAndDelete(id); // se elimina la tarjeta por id
+    const deletedCard = await Card.findByIdAndDelete(id); // aqui usar la varibale que esta hasta arriba que se llama card
 
     if (!deletedCard) {
       return res.status(404).json({ message: "Card not found" });
@@ -61,7 +61,7 @@ app.delete("/deleteCard/:id", async (req, res) => {
 //GET CARD
 app.get("/getAllCards", async (req, res) => {
   try {
-    const card = await Card.find();
+    const card = await Card.find(); //usar varaible varible card
     console.log(card);
     res.status(200).json(card);
   } catch (error) {
