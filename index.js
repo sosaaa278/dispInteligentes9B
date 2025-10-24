@@ -21,8 +21,8 @@ app.post("/createCard", async (req, res) => {
 //UPDATE CARD
 app.put("/updateCard/:id", async (req, res) => {
   try {
-    const { id } = req.params; 
-    const updates = req.body; 
+    const { id } = req.params;
+    const updates = req.body;
 
     const updatedCard = await Card.findByIdAndUpdate(id, updates, {
       new: true,
@@ -55,7 +55,7 @@ app.delete("/deleteCard/:id", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Error deleting card" });
-  } 
+  }
 });
 
 //GET CARD
@@ -75,7 +75,7 @@ app.get("/getCard/:id", async (req, res) => {
     const card = await Card.findById(id);
     res.status(200).json(card);
   } catch (error) {
-    console.error(error);
+    console.error(error); // podrías mandar una respuesta al cliente si algo falla :)
   }
 });
 
