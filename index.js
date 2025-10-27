@@ -79,7 +79,8 @@ app.get("/getCard/:id", async (req, res) => {
   }
 });
 
-app.get("/endpoints",(req,res)=>{
+app.get("/endpoints",async (req,res)=>{
+  try{
   const template = [
     {
       path:"https://dispinteligentes9b.onrender.com/getAllCards",
@@ -108,6 +109,9 @@ app.get("/endpoints",(req,res)=>{
     }
   ];
   res.json(template)
+}catch(error){
+  console.error("no se pudo andar chaval", error)
+}
 })
 // app.post("/send", (req, res) => {
 //   const { user, email } = req.body;
