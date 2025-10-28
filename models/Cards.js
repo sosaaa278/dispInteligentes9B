@@ -16,7 +16,7 @@ const cardSchema = new mongoose.Schema(
     description: {
       type: String,
       trim: true,
-      required: true,
+      required: true, //podrias quitar el required solo en description por si no hay nada que agregar
     },
   },
   {
