@@ -94,6 +94,42 @@ app.get("/getCard/:id", async (req, res) => {
 //   res.status(200).send("Hola world");
 // });
 
+app.get("/endpoints", async (req, res) => {
+  try {
+    const template = [
+      {
+        path: "https://dispinteligentes9b-wpi2.onrender.com/getAllCards",
+        method: "GET",
+        description: "trae todas las cartas"
+      },
+      {
+        path: "https://dispinteligentes9b-wpi2.onrender.com/getCard/:id",
+        method: "GET",
+        description: "Trae cartas por id"
+      },
+      {
+        path: "https://dispinteligentes9b-wpi2.onrender.com/createCard",
+        method: "POST",
+        description: "Crea la carta"
+      },
+      {
+        path: "https://dispinteligentes9b-wpi2.onrender.com/updateCard/:id",
+        method: "PUT",
+        description: "Actualiza las cartas parcial o completamente"
+      },
+      {
+        path: "https://dispinteligentes9b-wpi2.onrender.com/deleteCard/:id",
+        method: "DELETE",
+        description: "Borra una carta"
+      }
+    ];
+    res.json(template)
+  } catch (error) {
+    console.error("no se pudo andar chaval", error)
+  }
+})
+
 app.listen(3000, () => {
   console.log("Servidor ejecutandose en https://localhost:3000");
 });
+
