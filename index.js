@@ -79,40 +79,6 @@ app.get("/getCard/:id", async (req, res) => {
   }
 });
 
-app.get("/endpoints",async (req,res)=>{
-  try{
-  const template = [
-    {
-      path:"https://dispinteligentes9b.onrender.com/getAllCards",
-      method:"GET",
-      description:"trae todas las cartas"
-    },
-    {
-      path:"https://dispinteligentes9b.onrender.com/getCard/:id",
-      method:"GET",
-      description:"Trae cartas por id"
-    },
-    {
-      path:"https://dispinteligentes9b.onrender.com/createCard",
-      method:"POST",
-      description:"Crea la carta"
-    },
-    {
-      path:"https://dispinteligentes9b.onrender.com/updateCard/:id",
-      method:"PUT",
-      description:"Actualiza las cartas parcial o completamente"
-    },
-    {
-      path:"https://dispinteligentes9b.onrender.com/deleteCard/:id",
-      method:"DELETE",
-      description:"Borra una carta"
-    }
-  ];
-  res.json(template)
-}catch(error){
-  console.error("no se pudo andar chaval", error)
-}
-})
 // app.post("/send", (req, res) => {
 //   const { user, email } = req.body;
 //   console.log("Datos recibidos:" + user + "" + email);
